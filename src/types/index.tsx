@@ -6,14 +6,9 @@ interface CustomAxiosResponse<T = unknown> extends AxiosResponse<T> {
 }
 
 interface Exam {
-  examId: number;
-  patientId: string;
-  patientName: string;
-  examDateTime: string;
-  patientDob: string;
-  accessionNo: string;
-  studyDescription: string;
-  status: string;
+  userId: number;
+  userName: string;
+  email: string;
 }
 
 interface ExamsState {

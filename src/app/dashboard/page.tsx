@@ -19,29 +19,17 @@ export default function DashboardPage() {
         <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 border-b">Exam ID</th>
-              <th className="px-4 py-2 border-b">Patient ID</th>
-              <th className="px-4 py-2 border-b">Patient Name</th>
-              <th className="px-4 py-2 border-b">Exam Time</th>
-              <th className="px-4 py-2 border-b">DOB</th>
-              <th className="px-4 py-2 border-b">Accession No</th>
-              <th className="px-4 py-2 border-b">Study Description</th>
-              <th className="px-4 py-2 border-b">Status</th>
+              <th className="px-4 py-2 border-b">User ID</th>
+              <th className="px-4 py-2 border-b">User Name</th>
+              <th className="px-4 py-2 border-b">Email</th>
             </tr>
           </thead>
           <tbody>
             {exams.map((exam) => (
-              <tr key={exam.examId} className="text-center hover:bg-gray-50">
-                <td className="px-4 py-2 border-b">{exam.examId}</td>
-                <td className="px-4 py-2 border-b">{exam.patientId}</td>
-                <td className="px-4 py-2 border-b">{exam.patientName}</td>
-                <td className="px-4 py-2 border-b">{exam.examDateTime}</td>
-                <td className="px-4 py-2 border-b">{exam.patientDob || "-"}</td>
-                <td className="px-4 py-2 border-b">{exam.accessionNo}</td>
-                <td className="px-4 py-2 border-b">
-                  {exam.studyDescription || "-"}
-                </td>
-                <td className="px-4 py-2 border-b">{exam.status}</td>
+              <tr key={exam.userId} className="text-center hover:bg-gray-50">
+                <td className="px-4 py-2 border-b">{exam.userId}</td>
+                <td className="px-4 py-2 border-b">{exam.userName}</td>
+                <td className="px-4 py-2 border-b">{exam.email}</td>
               </tr>
             ))}
           </tbody>
@@ -50,8 +38,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
-export const useExams = create<ExamsState>((set) => ({
-  exams: [],
-  setExams: (data: Exam[]) => set({ exams: data }),
-}));
